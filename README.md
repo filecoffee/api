@@ -21,28 +21,6 @@ Want to upload a file by using code, for example, for your platform?
 
 If you want the upload to be linked to your account, ensure you add your API key to the query.
 
-```js
-const request = require('request')
-const fs = require('fs')
-
-const api_key = 'your_api_key'
-const options = {
-  'method': 'POST',
-  'url': 'https://file.coffee/api/v1/upload?key=' + api_key,
-  'headers': {
-    'Content-Type': 'multipart/form-data'
-  },
-  formData: {
-    'file': {
-      'value': fs.createReadStream('your_file')
-    }
-  }
-}
-request(options, function (error, response) {
-  if (error) throw new Error(error)
-  console.log(response.body)
-})
-```
 ## Information
 Get information about file.coffee, like the upload count and data used.
 
@@ -52,17 +30,8 @@ Get information about file.coffee, like the upload count and data used.
 
 If you want the upload to be linked to your account, ensure you add your API key to the query.
 
-```js
-const request = require('request')
-const options = {
-  'method': 'GET',
-  'url': 'https://file.coffee/api/v1/information'
-}
-request(options, function (error, response) {
-  if (error) throw new Error(error)
-  console.log(response.body)
-})
-```
-
 # More endpoint documentation in the future
 We have some more endpoints that need documentation, we'll add those later to this repo.
+
+# Examples
+For examples, check the `examples` folder. It contains examples of how to use the API in different programming languages.
